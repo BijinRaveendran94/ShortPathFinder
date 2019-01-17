@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DataClass  {
 
-    public List<JSONObject> getWaypointsForRoom(String json, JSONObject room) {
+    public static List<JSONObject> getWaypointsForRoom(String json, JSONObject room) {
         List<JSONObject> arrayList = new ArrayList<JSONObject>();
         try {
 
@@ -77,7 +77,7 @@ public class DataClass  {
         return arrayList;
     }
 
-    private LatLng getNearestNodeFor(LatLng location, ArrayList<JSONObject> nodesHash) {
+    public static LatLng getNearestNodeFor(LatLng location, ArrayList<JSONObject> nodesHash) {
         try {
             LatLng selectedNode = null;
 
@@ -111,7 +111,7 @@ public class DataClass  {
         return null;
     }
 
-    public double distance(double lat_a, double lng_a, double lat_b, double lng_b) {
+    public static double distance(double lat_a, double lng_a, double lat_b, double lng_b) {
 
         double earthRadius = 3958.75;
         double latDiff = Math.toRadians(lat_b - lat_a);
@@ -126,10 +126,8 @@ public class DataClass  {
 
         return new Float(distance * meterConversion).doubleValue();
     }
-
-
-
-    private ArrayList<JSONObject> getNodesForWaypoints(List<JSONObject> Waypoints) {
+    
+    public static ArrayList<JSONObject> getNodesForWaypoints(List<JSONObject> Waypoints) {
         ArrayList<JSONObject> node = new ArrayList<JSONObject>();
         try {
             for (int i = 0; i < Waypoints.size(); i++) {
