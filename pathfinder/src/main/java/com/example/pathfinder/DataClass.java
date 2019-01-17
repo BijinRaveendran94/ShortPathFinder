@@ -1,3 +1,5 @@
+package com.example.pathfinder;
+
 import android.os.Build;
 
 import com.google.android.gms.maps.model.LatLng;
